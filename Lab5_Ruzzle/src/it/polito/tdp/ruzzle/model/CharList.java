@@ -40,5 +40,11 @@ public class CharList implements Comparable {
 			return 1;
 	}
 
-	
+	public String toString(){
+		String s="";
+		for(int i=0;i<lett.length;i++){
+			s+=""+lett[i];
+		}
+		return s; 
+	}
 }

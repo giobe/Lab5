@@ -7,17 +7,17 @@ import java.sql.Statement;
 
 public class ParolaDao {
 	Connection con = DBConnect.getConnection();
-	public boolean cerca(char parola[], int passo){
+	public boolean cerca(String lettere2, int passo){
 		
 		
 		try {
-			String in="";
+			/*String in="";
 			for(int i=0;i<=passo;i++){
-				in+=""+parola[i];
-			}
+				in+=""+lettere2[i];
+			}*/
 			
 			Statement st = con.createStatement();
-			String sql = "select nome from parola where nome=\""+in+"\"";
+			String sql = "select nome from parola where nome='"+lettere2+"'";
 		    ResultSet res= st.executeQuery(sql);
 		    
 		    if(res.next()){
@@ -33,16 +33,16 @@ public class ParolaDao {
 		return false;
 	}
 	
-	public boolean contiene(char iniziali[], int passo){
+	public boolean contiene(String lettere2, int passo){
 		
 		try {
-			String in="";
+			/*String in="";
 			for(int i=0;i<=passo;i++){
-				in+=""+iniziali[i];
+				in+=""+lettere2[i];
 			}
-			
+			*/
 			Statement st = con.createStatement();
-			String sql="select nome from parola where nome like '"+in+"%'";
+			String sql="select nome from parola where nome like '"+lettere2+"%'";
 			System.out.println(sql);
 			ResultSet res = st.executeQuery(sql);
 			if(res.next()){
